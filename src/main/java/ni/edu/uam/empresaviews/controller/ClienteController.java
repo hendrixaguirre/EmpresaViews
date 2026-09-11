@@ -1,5 +1,6 @@
 package ni.edu.uam.empresaviews.controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
@@ -110,6 +111,11 @@ public class ClienteController {
         cmbTipoCliente.getSelectionModel().clearSelection();
         txtDocumento.clear();
         txtDirectorio.clear();
+    }
+
+    @FXML
+    private void cerrarSistema(ActionEvent event) {
+        System.exit(0);
     }
 
 
