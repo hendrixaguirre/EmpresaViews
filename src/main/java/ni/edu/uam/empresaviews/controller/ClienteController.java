@@ -73,9 +73,10 @@ public class ClienteController {
         Optional<ButtonType> respuesta = confirmacion.showAndWait();
         if (respuesta.isPresent() && respuesta.get() == ButtonType.OK) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Cliente registrado");
-            alert.setHeaderText("Cliente registrado");
-            alert.setContentText("Cliente registrado");
+            alert.setTitle("Cliente registrado!");
+            alert.setHeaderText("Cliente registrado!");
+            alert.setContentText("Cliente: " +txtNombre.getText()+ " registrado!");
+            alert.showAndWait();
             limpiarControles();
         }
     }

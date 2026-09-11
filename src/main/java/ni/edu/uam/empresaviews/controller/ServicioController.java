@@ -3,7 +3,6 @@ package ni.edu.uam.empresaviews.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.text.Text;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 
@@ -22,11 +21,11 @@ public class ServicioController {
     @FXML
     private ComboBox<String> cmbTipoServicio;
     @FXML
-    private RadioButton rbtnAlto;
+    private RadioButton rbtnAlta;
     @FXML
-    private RadioButton rbtnMedio;
+    private RadioButton rbtnMedia;
     @FXML
-    private RadioButton rbtnBajo;
+    private RadioButton rbtnBaja;
     @FXML
     private TextArea txtAreaDescripcion;
     @FXML
@@ -96,7 +95,7 @@ public class ServicioController {
         String correo = txtCorreo.getText().trim();
         String asunto = txtAreaAsunto.getText().trim();
         String tipoServicio = cmbTipoServicio.getValue();
-        boolean prioridadSeleccionada = rbtnAlto.isSelected() || rbtnMedio.isSelected() || rbtnBajo.isSelected();
+        boolean prioridadSeleccionada = rbtnAlta.isSelected() || rbtnMedia.isSelected() || rbtnBaja.isSelected();
         String descripcion = txtAreaDescripcion.getText().trim();
         String archivo = txtArchivo.getText().trim();
         String directorio = txtCarpeta.getText().trim();
@@ -121,9 +120,9 @@ public class ServicioController {
         txtTipoCliente.clear();
         cmbTipoServicio.getSelectionModel().clearSelection();
         txtAreaAsunto.clear();
-        rbtnAlto.setSelected(false);
-        rbtnMedio.setSelected(false);
-        rbtnBajo.setSelected(false);
+        rbtnAlta.setSelected(false);
+        rbtnMedia.setSelected(false);
+        rbtnBaja.setSelected(false);
         txtArchivo.clear();
         txtCarpeta.clear();
         txtAreaDescripcion.clear();
