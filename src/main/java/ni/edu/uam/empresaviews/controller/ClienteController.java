@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
+import ni.edu.uam.empresaviews.model.Cliente;
 
 import java.io.File;
 import java.util.Optional;
@@ -65,6 +66,9 @@ public class ClienteController {
         if(!validarFormulario()){
             return;
         }
+
+        Cliente cliente = new Cliente( txtNombre.getText().trim(), txtCorreo.getText().trim(), txtTelefono.getText().trim(), cmbTipoCliente.getValue().trim(), txtDocumento.getText().trim(), txtDirectorio.getText().trim() );
+
         Alert confirmacion = new Alert(Alert.AlertType.CONFIRMATION);
         confirmacion.setTitle("Confirmación");
         confirmacion.setHeaderText("¿Seguro que quiere registrar el cliente?");
@@ -75,7 +79,7 @@ public class ClienteController {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Cliente registrado!");
             alert.setHeaderText("Cliente registrado!");
-            alert.setContentText("Cliente: " +txtNombre.getText()+ " registrado!");
+            alert.setContentText("Nombre: " + cliente.getNombre() + "\n" + "Correo: " + cliente.getCorreo() + "\n" + "Teléfono: " + cliente.getTelefono() + "\n" + "Tipo de cliente: " + cliente.getTipoCliente() + "\n" + "Documento de identidad: " + cliente.getDocumentoIdentidad() + "\n" + "Directorio: " + cliente.getDirectorioCliente());
             alert.showAndWait();
             limpiarControles();
         }
