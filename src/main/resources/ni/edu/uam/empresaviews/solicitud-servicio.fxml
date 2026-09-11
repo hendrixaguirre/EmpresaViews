@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="btnLimpiarControles" prefHeight="566.0" prefWidth="562.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ni.edu.uam.empresaviews.controller.ServicioController">
+<AnchorPane fx:id="anchorPane" prefHeight="566.0" prefWidth="562.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ni.edu.uam.empresaviews.controller.ServicioController">
    <children>
       <Label layoutX="167.0" layoutY="30.0" text="SOLICITUD DE SERVICIO">
          <font>
@@ -41,11 +41,14 @@
             <Label text="Tipo de servicio:" GridPane.rowIndex="4" />
             <ComboBox fx:id="cmbTipoServicio" prefHeight="25.0" prefWidth="199.0" promptText="Seleccione el tipo de servicio" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <Label text="Prioridad:" GridPane.rowIndex="5" />
+             <fx:define>
+                 <ToggleGroup fx:id="prioridadGroup"/>
+             </fx:define>
             <HBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="364.0" spacing="15.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <children>
-                  <RadioButton fx:id="rbtnAlta" mnemonicParsing="false" text="Alta" />
-                  <RadioButton fx:id="rbtnMedia" mnemonicParsing="false" text="Media" />
-                  <RadioButton fx:id="rbtnBaja" mnemonicParsing="false" text="Baja" />
+                  <RadioButton fx:id="rbtnAlta" mnemonicParsing="false" text="Alta" toggleGroup="$prioridadGroup"/>
+                  <RadioButton fx:id="rbtnMedia" mnemonicParsing="false" text="Media" toggleGroup="$prioridadGroup"/>
+                  <RadioButton fx:id="rbtnBaja" mnemonicParsing="false" text="Baja" toggleGroup="$prioridadGroup"/>
                </children>
             </HBox>
             <Label text="Descripción del problema:" GridPane.rowIndex="6" />
