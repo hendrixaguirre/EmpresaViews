@@ -3,7 +3,6 @@ package ni.edu.uam.empresaviews.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.text.Text;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 
@@ -61,7 +60,6 @@ public class ClienteController {
         }
     }
 
-
     @FXML
     private void registrarCliente() {
         if(!validarFormulario()){
@@ -90,7 +88,6 @@ public class ClienteController {
         String directorio = txtDirectorio.getText().trim();
         String tipoCliente = cmbTipoCliente.getValue();
 
-
         if (nombre.isEmpty() || responsable.isEmpty() || descripcion.isEmpty() || archivo.isEmpty() || directorio.isEmpty() || tipoCliente == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
@@ -117,7 +114,4 @@ public class ClienteController {
     private void cerrarSistema(ActionEvent event) {
         System.exit(0);
     }
-
-
-
 }

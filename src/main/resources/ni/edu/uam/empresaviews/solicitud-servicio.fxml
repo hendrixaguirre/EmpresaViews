@@ -39,7 +39,7 @@
             <Label text="Asunto" GridPane.rowIndex="3" />
             <TextArea fx:id="txtAreaAsunto" prefHeight="50.0" prefWidth="252.0" promptText="Ingrese el asunto del servicio" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <Label text="Tipo de servicio:" GridPane.rowIndex="4" />
-            <ComboBox fx:id="cmbTipoCliente" prefHeight="25.0" prefWidth="199.0" promptText="Seleccione el tipo de servicio" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <ComboBox fx:id="cmbTipoServicio" prefHeight="25.0" prefWidth="199.0" promptText="Seleccione el tipo de servicio" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <Label text="Prioridad:" GridPane.rowIndex="5" />
             <HBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="364.0" spacing="15.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <children>
