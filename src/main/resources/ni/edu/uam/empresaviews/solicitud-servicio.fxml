@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="btnLimpiarControles" prefHeight="566.0" prefWidth="562.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ni.edu.uam.empresaviews.controller.ServicioController">
+   <children>
+      <Label layoutX="167.0" layoutY="30.0" text="SOLICITUD DE SERVICIO">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="206.0" layoutY="68.0" text="Complete todos los campos." />
+      <Separator layoutX="24.0" layoutY="100.0" prefHeight="30.0" prefWidth="501.0" />
+      <GridPane layoutX="34.0" layoutY="131.0" prefHeight="327.0" prefWidth="481.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="172.0" minWidth="10.0" prefWidth="142.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="374.0" minWidth="10.0" prefWidth="302.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="39.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="85.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="75.0" minHeight="0.0" prefHeight="32.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="75.0" minHeight="6.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="80.0" minHeight="8.0" prefHeight="34.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Nombre:" />
+            <TextField fx:id="txtNombre" promptText="Ingrese el nombre del cliente" GridPane.columnIndex="1" />
+            <Label text="Correo:" GridPane.rowIndex="1" />
+            <TextField fx:id="txtCorreo" promptText="Ingrese el correo del cliente" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Tipo de cliente:" GridPane.rowIndex="2" />
+            <TextField fx:id="txtTipoCliente" prefHeight="25.0" prefWidth="303.0" promptText="Ingrese el tipo de cliente" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Asunto" GridPane.rowIndex="3" />
+            <TextArea fx:id="txtAreaAsunto" prefHeight="50.0" prefWidth="252.0" promptText="Ingrese el asunto del servicio" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label text="Tipo de servicio:" GridPane.rowIndex="4" />
+            <ComboBox fx:id="cmbTipoCliente" prefHeight="25.0" prefWidth="199.0" promptText="Seleccione el tipo de servicio" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label text="Prioridad:" GridPane.rowIndex="5" />
+            <HBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="364.0" spacing="15.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <children>
+                  <RadioButton fx:id="rbtnAlta" mnemonicParsing="false" text="Alta" />
+                  <RadioButton fx:id="rbtnMedia" mnemonicParsing="false" text="Media" />
+                  <RadioButton fx:id="rbtnBaja" mnemonicParsing="false" text="Baja" />
+               </children>
+            </HBox>
+            <Label text="Descripción del problema:" GridPane.rowIndex="6" />
+            <TextArea fx:id="txtAreaDescripcion" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label text="Archivo adjunto:" GridPane.rowIndex="7" />
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="8.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+               <children>
+                  <TextField fx:id="txtArchivo" prefHeight="25.0" prefWidth="199.0" promptText="Seleccione el archivo adjunto" />
+                  <Button fx:id="btnSeleccionarArchivo" mnemonicParsing="false" onAction="#seleccionarArchivoAdjunto" text="Seleccionar">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+               </children>
+            </HBox>
+            <Label text="Carpeta de evidencia:" GridPane.rowIndex="8" />
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="8.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
+               <children>
+                  <TextField fx:id="txtCarpeta" prefHeight="25.0" prefWidth="199.0" promptText="Seleccione la carpeta de evidencia" />
+                  <Button fx:id="btnSeleccionarCarpeta" mnemonicParsing="false" onAction="#seleccionarCarpetaEvidencia" text="Seleccionar">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
+      <Button fx:id="btnCerrar" layoutX="186.0" layoutY="481.0" mnemonicParsing="false" onAction="#cerrarSistema" prefHeight="49.0" prefWidth="102.0" text="Cerrar">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnLimpiarControles" layoutX="300.0" layoutY="481.0" mnemonicParsing="false" onAction="#limpiarControles" prefHeight="49.0" prefWidth="102.0" text="Limpiar">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnCrearSolicitud" defaultButton="true" layoutX="413.0" layoutY="481.0" mnemonicParsing="false" onAction="#crearSolicitud" prefHeight="49.0" prefWidth="102.0" text="Crear Solicitud">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
